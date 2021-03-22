@@ -717,7 +717,6 @@ class rfsoc_channel:
     
     #Parameters to be set for this DAC channel on the FPGA
     mask_samples = [] #List of samples to be uploaded as the mask
-    mask_enable = 0 #If we need to use the mask
     locking_waveform_samples = [] #list of samples to be uploaded as locking waveform
     mask_enable = 0 #Either 1 or 0, decides if we need the mask in the first place
     run_cycles = 0 #Number of cycles DAC verilog module will run for in playback state
@@ -1027,7 +1026,7 @@ class rfsoc_channel:
         #Success
         return 0
         
-        
+      
         
         
 #Tools for looking for serial ports to use
