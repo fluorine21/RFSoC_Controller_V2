@@ -134,7 +134,7 @@ def dac_sawtooth_test():
     
     #Check the status of the clocks
     board_obj.board_driver.open_board()
-    dac0, dac1, dac2, dac3, adc0, adc1, adc2, adc3 = board_obj.board_driver.check_clocks()
+    dac_status, adc_status = board_obj.board_driver.check_clocks()
     board_obj.board_driver.close_board()
     if(dac_status):
         raise RuntimeError("Error, the DAC RF clock for the FPGA was not detected, cannot upload waveforms without an RF clock present")

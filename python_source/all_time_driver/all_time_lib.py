@@ -210,8 +210,21 @@ class all_time_rfsoc_interface:
         if(adc0):
             raise RuntimeError("Error, the ADC RF clock for the FPGA was not detected, cannot read out ADC")
             
+        #Load the board with the channels
+        if(self.board_obj.configure_all_channels()):
+            raise RuntimeError("Error, could not configure channels for DAC test")
         
+        adc_num_trigs = math.log2(adc_avgs)
         
+        for i in range(0, adc_num_trigs):
+            if(self.board_obj.trigger()):
+                raise RuntimeError("Error triggering board")
+            else:
+                print("Trigger #" + str(i))
+                
+        #Read out the adc
+        adc_samples = self.board_obj.readout_adc(self.adc_channel_num);
+        return adc_samples
             
             
             
