@@ -8,6 +8,11 @@ Created on Wed Feb 24 16:09:05 2021
 import rfsoc_board_driver as rbd
 import math
 
+
+DAC_MAX = 0x7FFF
+
+USE_IQ = 0 #If 1, convert intensity + phase to I+Q
+
 #This file has all of the functions for calibrating and implementing the all time architecture on the RFSoC_V2 platform
 
 EMPTY_VAL = 0xDEADBEEFDEADBEEF
@@ -40,10 +45,11 @@ class transfer_function:
         for i in range(0, len(self.input_list)):
             err = abs(self.input_list[i]-in_p)
             if(err < min_error):
-                min_err = err
+                min_error = err
                 min_err_pos = i
-        return self.output_list[i], self.input_list[i]
+        return self.output_list[min_err_pos], self.input_list[min_err_pos]
         
+
     
     
         
@@ -58,6 +64,54 @@ class all_time_obj:
     #Input to DAC transfer functions
     #256 entrties representing 0
     a_to_dac_tf = None
+    
+    all_time_int = None
+    
+    
+    #Channel delays for a, b, and c
+    a_del = 0
+    b_del = 0
+    c_del = 0
+    
+    
+    adc_avgs = 1 #Number of adc averages to use
+    
+    def __init__(self):
+        
+        #TODO add args here
+        all_time_int = all_time_rfsoc_interface()
+        
+        
+    def measure_channel_delays(self):
+        
+        
+        return
+    
+    def measure_transfer_functions(self):
+        
+        #We assume that the modulators are biased to their min operating point
+        #First we do a run with B and C being all max value to get the adc delay
+        i_l = [DAC_MAX]*16
+        p_l = [0] * 16
+        
+        adc_samps = self.all_time_int.run_exp_list(i_l, p_l, i_l, p_l, i_l, p_l, p_l, self.a_del, self.b_del, self.c_del, self.adc_avgs)
+        
+        
+        
+        
+        #Then we do a run with B with C at whatever max value to find B's max
+        
+        #Then we do a run with C at B's max value to find C's max value
+        
+        #Then we do a run with B again at C's max value
+        
+        
+        
+        
+        return
+    
+    
+    
 
 
 
@@ -87,77 +141,13 @@ class all_time_rfsoc_interface:
     
     
 
+    #All inputs here except _del and _avgs are lists
     #Inputs are 16-bit values to be fed to DAC
     #im is intensity modulator, pm is phase modulator
     #a_atten is intensity modulator before 50/50
     #a_del is the delay in ns when driving a channel, must be between 0 and 4ns
     #Each output pulse is 4ns
     #adc_avgs is the number of ADC averages to take, must be a power of 2
-    def run_exp(self, a_im, a_pm, b_im, b_pm, c_im, c_pm, a_atten, a_del, b_del, c_del, adc_avgs):
-        
-        if(a_del > 4 or b_del > 4 or c_del > 4 or a_del < 0 or b_del < 0 or c_del < 0):
-            raise ValueError("Error, channel delay must be less than 4ns and greater or equal to 0ns")
-        #If our adc averages is 0 or not a power of 2
-        if(adc_avgs == 0 or math.log(adc_avgs, 2) != round(math.log(adc_avgs, 2))):
-            raise ValueError("Error, adc averages must be greater than 0 and a power of 2")
-        
-        
-        #Deal with channel A first
-        a_im_wave = self.get_waveform(a_im, a_del)
-        a_pm_wave = self.get_waveform(a_pm, a_del)
-        a_im_chan = self.setup_channel(a_im_wave, self.a_im_channel_num)
-        a_pm_chan = self.setup_channel(a_pm_wave, self.a_pm_channel_num)
-        
-        b_im_wave = self.get_waveform(b_im, b_del)
-        b_pm_wave = self.get_waveform(b_pm, b_del)
-        b_im_chan = self.setup_channel(b_im_wave, self.b_im_channel_num)
-        b_pm_chan = self.setup_channel(b_pm_wave, self.b_pm_channel_num)
-        
-        c_im_wave = self.get_waveform(c_im, c_del)
-        c_pm_wave = self.get_waveform(c_pm, c_del)
-        c_im_chan = self.setup_channel(c_im_wave, self.c_im_channel_num)
-        c_pm_chan = self.setup_channel(c_pm_wave, self.c_pm_channel_num)
-        
-        a_atten_wave = self.get_waveform(a_atten, a_del)
-        a_atten_chan = self.setup_channel(a_atten_wave, self.a_atten_channel_num)
-        
-        #Add the ADC channel
-
-        adc_chan = rbd.rfsoc_channel("ADC", self.adc_channel_num, 0, 0, 0, 0, 8, 1, 1, "", "", math.log(adc_avgs, 2), 32)
-
-        #Clear anything that's currently in the board object and add our channels
-        self.board_obj.channel_list =  [a_im_chan, 
-                                        a_pm_chan, 
-                                        b_im_chan, 
-                                        b_pm_chan,
-                                        c_im_chan, 
-                                        c_pm_chan, 
-                                        a_atten_chan,
-                                        adc_chan]
-        
-        #Check to see if the board is up
-        
-        
-        
-        
-        
-    #Generates a constant amplitude waveform for the channel
-    def get_waveform(self, amp, delay):
-        wf = [0]*16
-        d_samp = round(delay * 4)
-        samp_num = 0
-        for i in range(0, 16):
-            #If we're not in the delay still and we haven't had 16 samples (4ns) yet
-            if(i >= d_samp and samp_num < 16):
-                wf[i] = amp
-                samp_num += 1
-        return wf
-      
-    def setup_channel(self, waveform, chann_num):
-        chan = rbd.rfsoc_channel("DAC", chann_num, 0, 0, 0, 0, 8, 1, 1, "", "", 0, 0)
-        chan.waveform_samples = waveform
-        chan.run_cycles = 2
-        return chan
         
     #Same as run_exp but now everything is a list of stuff to run sequentially
     #Returns ADC values read out
@@ -168,6 +158,10 @@ class all_time_rfsoc_interface:
         #If our adc averages is 0 or not a power of 2
         if(adc_avgs == 0 or math.log(adc_avgs, 2) != round(math.log(adc_avgs, 2))):
             raise ValueError("Error, adc averages must be greater than 0 and a power of 2")
+            
+        if(USE_IQ):
+            #TODO
+            return
         
         #Deal with channel A first
         a_im_wave, a_im_del = self.get_waveform_list(a_im, a_del)
@@ -214,9 +208,9 @@ class all_time_rfsoc_interface:
         if(self.board_obj.configure_all_channels()):
             raise RuntimeError("Error, could not configure channels for DAC test")
         
-        adc_num_trigs = math.log2(adc_avgs)
         
-        for i in range(0, adc_num_trigs):
+        
+        for i in range(0, adc_avgs):
             if(self.board_obj.trigger()):
                 raise RuntimeError("Error triggering board")
             else:
@@ -259,6 +253,47 @@ class all_time_rfsoc_interface:
         return chan  
 
         
+##############################################
+#Utility functions that aren't class specific#
+##############################################
+
+#Finds one peak for each bin and returns a list of peaks
+#ignores the first num_ignore samples
+def find_all_peaks(sample_list, num_ignore):
+    
+    i = num_ignore
+    peak_list = []
+    while(i < len(sample_list)):
         
+        max_val = 0
+        for j in range(0, 8):
+            if(sample_list[i+j] > max_val):
+                max_val = sample_list[i+j]
+        peak_list.append(max_val)
+        i += 8 #Only go up 8 samples since the ADC works at half the sample rate
+    
+#Determines the number of initial samples from the ADC that should be ignored to put the peaks into the correct bins
+def find_peak_delay(sample_list, threshold):
+    
+    j = 0
+    above_t = 0
+    max_val = 0
+    max_val_pos = 0
+    for i in range(0, len(sample_list)):
+        #If we're already above threshold
+        if(above_t):
+            #If this sample is the new peak
+            if(sample_list[i] > max_val):
+                max_val = sample_list[i]
+                max_val_pos = i
+            j += 1 #increment the first bin counter
+            if(j > 8): #If we're done counting this bin
+                return max_val_pos - 4 #We ignore everything except 4 samples before the first peak above threshold
+
+        elif(sample_list[i] > threshold):
+                above_t = 1
+                
         
+    
+          
         
