@@ -971,6 +971,8 @@ class rfsoc_channel:
         waveform_len_in_samples = self.period * 4
         if(waveform_len_in_samples % 16 != 0):
             raise ValueError("Error, the period of the waveform period of channel #"+str(self.channel_num)+" must be a multiple of 4ns, cannot upload waveform to FPGA")
+            
+            
         #Form the final waveform to be sent to the FPGA
         waveform_wordstream = []
         if(isinstance(self.waveform_filename, list)):

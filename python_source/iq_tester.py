@@ -1,3 +1,5 @@
+import waveform_plotter as wp
+
 
 import rfsoc_board_driver as rbd
 
@@ -93,4 +95,27 @@ q_chan.pre_delay_cycles = q_c
 q_chan.post_delay_cycles = 16
     
 #Add the channels to the rfsoc object
-board_obj.channel_list = [];    
+board_obj.channel_list = [i_chan, q_chan];  
+
+
+wp.plot_dac_waveforms(board_obj.channel_list)
+
+#Check the status of the clocks
+board_obj.board_driver.open_board()
+dac_status, adc_status = board_obj.board_driver.check_clocks()
+board_obj.board_driver.close_board()
+if(dac_status):
+    raise RuntimeError("Error, the DAC RF clock for the FPGA was not detected, cannot upload waveforms without an RF clock present")
+    
+#Configure the board
+if(board_obj.configure_all_channels()):
+    raise RuntimeError("Error, could not configure channels for DAC test")
+    
+#Trigger the board once
+if(board_obj.trigger()):
+    raise RuntimeError("Error triggering board")
+    
+if(board_obj.trigger()):
+    raise RuntimeError("Error triggering board")
+    
+     
