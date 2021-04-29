@@ -18,6 +18,15 @@ BAUDRATE = 115200
 
 GARBAGE_WORD = [0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0]#Used for flushing DMA
 
+
+#Constants for channel class
+NANOSECONDS_PER_DAC_WORD = 4
+DAC_MAX_VALUE = 32767 - 5#0x7FFF
+DAC_MIN_VALUE = -32768 + 5#0x8000
+DAC_FIFO_LEN = 4096 * 16 # in number of samples
+
+MIN_WAVE_SAMPLES = 128 #This is for fixing issues with the 3 buffer stages in the waveform fifos
+
 #Command definitions
 CMD_PREAMBLE = 0xAA
 CMD_ACK = 0x00
@@ -704,13 +713,7 @@ class rfsoc_board:
         return sample_list
         
    
-#Constants for this class
-NANOSECONDS_PER_DAC_WORD = 4
-DAC_MAX_VALUE = 32767 - 5#0x7FFF
-DAC_MIN_VALUE = -32768 + 5#0x8000
-DAC_FIFO_LEN = 4096 * 16 # in number of samples
 
-MIN_WAVE_SAMPLES = 128 #This is for fixing issues with the 3 buffer stages in the waveform fifos
             
 class rfsoc_channel:
 
@@ -918,8 +921,20 @@ class rfsoc_channel:
     #Returns 0 on success
     def generate_channel_data(self):
     
+        #If the locking filename is actually a list of samples
+        if(isinstance(self.locking_filename, list)):
+            #Just use this as the wordstream and continue
+            locking_wordstream = self.locking_filename
+            #Then shift the stream if need be
+            if(self.locking_shift):
+                locking_wordstream = self.rotate_stream(locking_wordstream, int(self.locking_shift*4))
+            #Set up our outputs correctly so they can be sent to the board
+            self.locking_waveform_samples = []
+            for l in locking_wordstream:
+                self.locking_waveform_samples.append(int(l))
+    
         #If the locking filename is blank then skip this step
-        if(self.locking_filename != ""):
+        elif(self.locking_filename != ""):
     
             #Get the locking wordstream
             locking_wordstream = self.read_waveform_file(self.locking_filename)
@@ -950,18 +965,31 @@ class rfsoc_channel:
         #If our waveform filename is blank just return for now
         if(self.waveform_filename == ""):
             return 0
-        
-        #First we're going to scale the waveform timing so it is a user-defined length
-        waveform_wordstream = self.read_waveform_file(self.waveform_filename)
+            
+            
+        #Check the sample length
         waveform_len_in_samples = self.period * 4
-        
         if(waveform_len_in_samples % 16 != 0):
             raise ValueError("Error, the period of the waveform period of channel #"+str(self.channel_num)+" must be a multiple of 4ns, cannot upload waveform to FPGA")
+        #Form the final waveform to be sent to the FPGA
+        waveform_wordstream = []
+        if(isinstance(self.waveform_filename, list)):
+            warn = 0
+            for wf in self.waveform_filename:
+                if(int(wf) != wf && warn == 0):
+                    warn = 1#Only warn once
+                    print("Waring, had to rescale value: " + str(wf) + " to " + str(int(wf)))
+                waveform_wordstream.append(int(wf))
             
         
-        waveform_wordstream = self.interpolate_sample_list(waveform_wordstream, waveform_len_in_samples)
-        #Then scale the amplitude of the wordstream and apply the amp factor
-        waveform_wordstream = self.scale_stream(waveform_wordstream, DAC_MIN_VALUE, DAC_MAX_VALUE)
+        else
+            #First we're going to scale the waveform timing so it is a user-defined length
+            waveform_wordstream = self.read_waveform_file(self.waveform_filename)
+            waveform_wordstream = self.interpolate_sample_list(waveform_wordstream, waveform_len_in_samples)
+            #Then scale the amplitude of the wordstream and apply the amp factor
+            waveform_wordstream = self.scale_stream(waveform_wordstream, DAC_MIN_VALUE, DAC_MAX_VALUE)
+        
+        
         if(self.waveform_amp_factor != 1):
             for i in range(0, len(waveform_wordstream)):
                 waveform_wordstream[i] = waveform_wordstream[i] * self.waveform_amp_factor
