@@ -1,6 +1,6 @@
+
+
 import waveform_plotter as wp
-
-
 import rfsoc_board_driver as rbd
 
 i_chan_num = 0
