@@ -9,7 +9,8 @@ dac_chan_num = 0
 adc_channel_num = 0
 dac_pre_delay = 10
 adc_shift = 0
-adc_run_cycles = num_pulses + 20
+adc_run_cycles = num_pulses + 100
+dac_delay = 2 #in samples
 
 
 #Set up the ramp for the outgoing DAC channel to the modulator
@@ -22,6 +23,9 @@ for i in range(0, num_pulses):
     scale = (i+1)/num_pulses
     d_w = [e*scale for e in square_wave]
     dac_wave += d_w
+    
+#Add the delay in
+dac_wave = [0]*dac_delay + dac_wave + [0]*(16-dac_delay)
     
 #Cast everything to int to avoid later problems
 for i in range(0, len(dac_wave)):
@@ -85,3 +89,4 @@ if(adc_data == []):
     
     
 wp.plot_adc_waveform(adc_data)
+wp.save_waveform_to_file(adc_data)

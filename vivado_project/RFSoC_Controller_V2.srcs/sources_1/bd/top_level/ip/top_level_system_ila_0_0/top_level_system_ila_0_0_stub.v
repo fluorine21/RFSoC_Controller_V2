@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue Dec 29 18:21:15 2020
-// Host        : JAMES-LENOVO running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top top_level_system_ila_0_0 -prefix
-//               top_level_system_ila_0_0_ top_level_system_ila_0_0_stub.v
+// Date        : Wed Jun  9 15:12:11 2021
+// Host        : JAMES-FLOOR4 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               d:/repos/RFSoC_Controller_V2/vivado_project/RFSoC_Controller_V2.srcs/sources_1/bd/top_level/ip/top_level_system_ila_0_0/top_level_system_ila_0_0_stub.v
 // Design      : top_level_system_ila_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xczu29dr-ffvf1760-2-e
@@ -27,8 +27,9 @@ module top_level_system_ila_0_0(clk, probe0, SLOT_0_AXIS_tdata,
   SLOT_9_AXIS_tlast, SLOT_9_AXIS_tvalid, SLOT_9_AXIS_tready, SLOT_10_AXIS_tdata, 
   SLOT_10_AXIS_tlast, SLOT_10_AXIS_tvalid, SLOT_10_AXIS_tready, SLOT_11_AXIS_tdata, 
   SLOT_11_AXIS_tlast, SLOT_11_AXIS_tvalid, SLOT_11_AXIS_tready, SLOT_12_AXIS_tdata, 
-  SLOT_12_AXIS_tlast, SLOT_12_AXIS_tvalid, SLOT_12_AXIS_tready, resetn)
-/* synthesis syn_black_box black_box_pad_pin="clk,probe0[15:0],SLOT_0_AXIS_tdata[31:0],SLOT_0_AXIS_tlast,SLOT_0_AXIS_tvalid,SLOT_0_AXIS_tready,SLOT_1_AXIS_tdata[255:0],SLOT_1_AXIS_tlast,SLOT_1_AXIS_tvalid,SLOT_1_AXIS_tready,SLOT_2_AXIS_tdata[31:0],SLOT_2_AXIS_tlast,SLOT_2_AXIS_tvalid,SLOT_2_AXIS_tready,SLOT_3_AXIS_tdata[255:0],SLOT_3_AXIS_tlast,SLOT_3_AXIS_tvalid,SLOT_3_AXIS_tready,SLOT_4_AXIS_tdata[255:0],SLOT_4_AXIS_tlast,SLOT_4_AXIS_tvalid,SLOT_4_AXIS_tready,SLOT_5_AXIS_tdata[255:0],SLOT_5_AXIS_tlast,SLOT_5_AXIS_tvalid,SLOT_5_AXIS_tready,SLOT_6_AXIS_tdata[255:0],SLOT_6_AXIS_tlast,SLOT_6_AXIS_tvalid,SLOT_6_AXIS_tready,SLOT_7_AXIS_tdata[255:0],SLOT_7_AXIS_tlast,SLOT_7_AXIS_tvalid,SLOT_7_AXIS_tready,SLOT_8_AXIS_tdata[255:0],SLOT_8_AXIS_tlast,SLOT_8_AXIS_tvalid,SLOT_8_AXIS_tready,SLOT_9_AXIS_tdata[255:0],SLOT_9_AXIS_tlast,SLOT_9_AXIS_tvalid,SLOT_9_AXIS_tready,SLOT_10_AXIS_tdata[255:0],SLOT_10_AXIS_tlast,SLOT_10_AXIS_tvalid,SLOT_10_AXIS_tready,SLOT_11_AXIS_tdata[255:0],SLOT_11_AXIS_tlast,SLOT_11_AXIS_tvalid,SLOT_11_AXIS_tready,SLOT_12_AXIS_tdata[255:0],SLOT_12_AXIS_tlast,SLOT_12_AXIS_tvalid,SLOT_12_AXIS_tready,resetn" */;
+  SLOT_12_AXIS_tlast, SLOT_12_AXIS_tvalid, SLOT_12_AXIS_tready, SLOT_13_AXIS_tdata, 
+  SLOT_13_AXIS_tlast, SLOT_13_AXIS_tvalid, SLOT_13_AXIS_tready, resetn)
+/* synthesis syn_black_box black_box_pad_pin="clk,probe0[15:0],SLOT_0_AXIS_tdata[31:0],SLOT_0_AXIS_tlast,SLOT_0_AXIS_tvalid,SLOT_0_AXIS_tready,SLOT_1_AXIS_tdata[255:0],SLOT_1_AXIS_tlast,SLOT_1_AXIS_tvalid,SLOT_1_AXIS_tready,SLOT_2_AXIS_tdata[31:0],SLOT_2_AXIS_tlast,SLOT_2_AXIS_tvalid,SLOT_2_AXIS_tready,SLOT_3_AXIS_tdata[255:0],SLOT_3_AXIS_tlast,SLOT_3_AXIS_tvalid,SLOT_3_AXIS_tready,SLOT_4_AXIS_tdata[255:0],SLOT_4_AXIS_tlast,SLOT_4_AXIS_tvalid,SLOT_4_AXIS_tready,SLOT_5_AXIS_tdata[255:0],SLOT_5_AXIS_tlast,SLOT_5_AXIS_tvalid,SLOT_5_AXIS_tready,SLOT_6_AXIS_tdata[255:0],SLOT_6_AXIS_tlast,SLOT_6_AXIS_tvalid,SLOT_6_AXIS_tready,SLOT_7_AXIS_tdata[255:0],SLOT_7_AXIS_tlast,SLOT_7_AXIS_tvalid,SLOT_7_AXIS_tready,SLOT_8_AXIS_tdata[255:0],SLOT_8_AXIS_tlast,SLOT_8_AXIS_tvalid,SLOT_8_AXIS_tready,SLOT_9_AXIS_tdata[255:0],SLOT_9_AXIS_tlast,SLOT_9_AXIS_tvalid,SLOT_9_AXIS_tready,SLOT_10_AXIS_tdata[255:0],SLOT_10_AXIS_tlast,SLOT_10_AXIS_tvalid,SLOT_10_AXIS_tready,SLOT_11_AXIS_tdata[255:0],SLOT_11_AXIS_tlast,SLOT_11_AXIS_tvalid,SLOT_11_AXIS_tready,SLOT_12_AXIS_tdata[255:0],SLOT_12_AXIS_tlast,SLOT_12_AXIS_tvalid,SLOT_12_AXIS_tready,SLOT_13_AXIS_tdata[127:0],SLOT_13_AXIS_tlast,SLOT_13_AXIS_tvalid,SLOT_13_AXIS_tready,resetn" */;
   input clk;
   input [15:0]probe0;
   input [31:0]SLOT_0_AXIS_tdata;
@@ -83,5 +84,9 @@ module top_level_system_ila_0_0(clk, probe0, SLOT_0_AXIS_tdata,
   input SLOT_12_AXIS_tlast;
   input SLOT_12_AXIS_tvalid;
   input SLOT_12_AXIS_tready;
+  input [127:0]SLOT_13_AXIS_tdata;
+  input SLOT_13_AXIS_tlast;
+  input SLOT_13_AXIS_tvalid;
+  input SLOT_13_AXIS_tready;
   input resetn;
 endmodule

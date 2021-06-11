@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Dec 30 10:54:57 2020
-| Host         : JAMES-LENOVO running 64-bit major release  (build 9200)
+| Date         : Wed Jun  9 15:31:41 2021
+| Host         : JAMES-FLOOR4 running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_level_wrapper_drc_opted.rpt -pb top_level_wrapper_drc_opted.pb -rpx top_level_wrapper_drc_opted.rpx
 | Design       : top_level_wrapper
 | Device       : xczu29dr-ffvf1760-2-e

@@ -11,7 +11,7 @@
 # To debug using xsct, launch xsct and run below command
 # source D:\repos\RFSoC_Controller_V2\vitis_workspace\rfsoc_v2_application_system\_ide\scripts\systemdebugger_no_fpga_flash_standalone.tcl
 # 
-connect -path [list tcp::1534 tcp:192.168.3.2:3121]
+connect -path [list tcp::1534 tcp:25.108.147.92:3121]
 source C:/Xilinx/Vitis/2020.2/scripts/vitis/util/zynqmp_utils.tcl
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
@@ -30,9 +30,9 @@ set mode [expr [mrd -value 0xFF5E0200] & 0xf]
 targets -set -nocase -filter {name =~ "*A53*#0"}
 rst -processor
 dow D:/repos/RFSoC_Controller_V2/vitis_workspace/rfsoc_v2_platform/export/rfsoc_v2_platform/sw/rfsoc_v2_platform/boot/fsbl.elf
-set bp_12_39_fsbl_bp [bpadd -addr &XFsbl_Exit]
+set bp_2_45_fsbl_bp [bpadd -addr &XFsbl_Exit]
 con -block -timeout 60
-bpremove $bp_12_39_fsbl_bp
+bpremove $bp_2_45_fsbl_bp
 targets -set -nocase -filter {name =~ "*A53*#0"}
 rst -processor
 dow D:/repos/RFSoC_Controller_V2/vitis_workspace/rfsoc_v2_application/Debug/rfsoc_v2_application.elf

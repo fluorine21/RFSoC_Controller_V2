@@ -23,6 +23,10 @@ module bd_9bbd_wrapper
     SLOT_12_AXIS_tlast,
     SLOT_12_AXIS_tready,
     SLOT_12_AXIS_tvalid,
+    SLOT_13_AXIS_tdata,
+    SLOT_13_AXIS_tlast,
+    SLOT_13_AXIS_tready,
+    SLOT_13_AXIS_tvalid,
     SLOT_1_AXIS_tdata,
     SLOT_1_AXIS_tlast,
     SLOT_1_AXIS_tready,
@@ -78,6 +82,10 @@ module bd_9bbd_wrapper
   input SLOT_12_AXIS_tlast;
   input SLOT_12_AXIS_tready;
   input SLOT_12_AXIS_tvalid;
+  input [127:0]SLOT_13_AXIS_tdata;
+  input SLOT_13_AXIS_tlast;
+  input SLOT_13_AXIS_tready;
+  input SLOT_13_AXIS_tvalid;
   input [255:0]SLOT_1_AXIS_tdata;
   input SLOT_1_AXIS_tlast;
   input SLOT_1_AXIS_tready;
@@ -134,6 +142,10 @@ module bd_9bbd_wrapper
   wire SLOT_12_AXIS_tlast;
   wire SLOT_12_AXIS_tready;
   wire SLOT_12_AXIS_tvalid;
+  wire [127:0]SLOT_13_AXIS_tdata;
+  wire SLOT_13_AXIS_tlast;
+  wire SLOT_13_AXIS_tready;
+  wire SLOT_13_AXIS_tvalid;
   wire [255:0]SLOT_1_AXIS_tdata;
   wire SLOT_1_AXIS_tlast;
   wire SLOT_1_AXIS_tready;
@@ -191,6 +203,10 @@ module bd_9bbd_wrapper
         .SLOT_12_AXIS_tlast(SLOT_12_AXIS_tlast),
         .SLOT_12_AXIS_tready(SLOT_12_AXIS_tready),
         .SLOT_12_AXIS_tvalid(SLOT_12_AXIS_tvalid),
+        .SLOT_13_AXIS_tdata(SLOT_13_AXIS_tdata),
+        .SLOT_13_AXIS_tlast(SLOT_13_AXIS_tlast),
+        .SLOT_13_AXIS_tready(SLOT_13_AXIS_tready),
+        .SLOT_13_AXIS_tvalid(SLOT_13_AXIS_tvalid),
         .SLOT_1_AXIS_tdata(SLOT_1_AXIS_tdata),
         .SLOT_1_AXIS_tlast(SLOT_1_AXIS_tlast),
         .SLOT_1_AXIS_tready(SLOT_1_AXIS_tready),

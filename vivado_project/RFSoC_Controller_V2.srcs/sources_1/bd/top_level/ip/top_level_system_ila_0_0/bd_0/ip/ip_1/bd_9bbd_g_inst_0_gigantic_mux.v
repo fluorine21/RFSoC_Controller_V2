@@ -4460,6 +4460,15 @@ module bd_9bbd_g_inst_0_gigantic_mux # (
      assign m_slot_12_axis_tid = slot_12_axis_tid ;
      assign m_slot_12_axis_tkeep = slot_12_axis_tkeep ;
      assign m_slot_12_axis_tdest = slot_12_axis_tdest ;
+     assign m_slot_13_axis_tvalid = slot_13_axis_tvalid ;
+     assign m_slot_13_axis_tready = slot_13_axis_tready ;
+     assign m_slot_13_axis_tdata = slot_13_axis_tdata ;
+     assign m_slot_13_axis_tstrb = slot_13_axis_tstrb ;
+     assign m_slot_13_axis_tlast = slot_13_axis_tlast ;
+     assign m_slot_13_axis_tuser = slot_13_axis_tuser ;
+     assign m_slot_13_axis_tid = slot_13_axis_tid ;
+     assign m_slot_13_axis_tkeep = slot_13_axis_tkeep ;
+     assign m_slot_13_axis_tdest = slot_13_axis_tdest ;
 
     
     

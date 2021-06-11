@@ -2,7 +2,15 @@
 #import matplotlib
 #matplotlib.use('WXAgg',warn=False, force=True)
 from matplotlib import pyplot as plt
+import time 
+import numpy
 #print ("Switched to:",matplotlib.get_backend())
+
+
+def save_waveform_to_file(data):
+    timestr = time.strftime("%Y-%m-%d--%H-%M-%S")
+    numpy.savetxt(timestr + "_adc_data", data, delimiter=",")
+    return
 
 #For plotting adc waveforms
 def plot_adc_waveform(data):

@@ -377,10 +377,10 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_pl, and set properties
   set system_ila_pl [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_pl ]
   set_property -dict [ list \
-   CONFIG.C_BRAM_CNT {52.5} \
+   CONFIG.C_BRAM_CNT {10} \
    CONFIG.C_DATA_DEPTH {1024} \
    CONFIG.C_MON_TYPE {MIX} \
-   CONFIG.C_NUM_MONITOR_SLOTS {13} \
+   CONFIG.C_NUM_MONITOR_SLOTS {14} \
    CONFIG.C_NUM_OF_PROBES {1} \
    CONFIG.C_SLOT_0_APC_EN {0} \
    CONFIG.C_SLOT_0_AXI_DATA_SEL {1} \
@@ -398,6 +398,10 @@ proc create_root_design { parentCell } {
    CONFIG.C_SLOT_12_AXI_DATA_SEL {1} \
    CONFIG.C_SLOT_12_AXI_TRIG_SEL {1} \
    CONFIG.C_SLOT_12_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
+   CONFIG.C_SLOT_13_APC_EN {0} \
+   CONFIG.C_SLOT_13_AXI_DATA_SEL {1} \
+   CONFIG.C_SLOT_13_AXI_TRIG_SEL {1} \
+   CONFIG.C_SLOT_13_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
    CONFIG.C_SLOT_1_APC_EN {0} \
    CONFIG.C_SLOT_1_AXI_DATA_SEL {1} \
    CONFIG.C_SLOT_1_AXI_TRIG_SEL {1} \
@@ -2163,6 +2167,8 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets rfsoc_pl_ctrl_verilo_0_m8_axis] 
   connect_bd_intf_net -intf_net rfsoc_pl_ctrl_verilo_0_m9_axis [get_bd_intf_pins rfsoc_pl_ctrl_verilo_0/m9_axis] [get_bd_intf_pins usp_rf_data_converter_0/s21_axis]
   connect_bd_intf_net -intf_net sysref_in_1 [get_bd_intf_ports sysref_in] [get_bd_intf_pins usp_rf_data_converter_0/sysref_in]
   connect_bd_intf_net -intf_net usp_rf_data_converter_0_m00_axis [get_bd_intf_pins rfsoc_pl_ctrl_verilo_0/s0_axis] [get_bd_intf_pins usp_rf_data_converter_0/m00_axis]
+connect_bd_intf_net -intf_net [get_bd_intf_nets usp_rf_data_converter_0_m00_axis] [get_bd_intf_pins system_ila_pl/SLOT_13_AXIS] [get_bd_intf_pins usp_rf_data_converter_0/m00_axis]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets usp_rf_data_converter_0_m00_axis]
   connect_bd_intf_net -intf_net usp_rf_data_converter_0_m01_axis [get_bd_intf_pins rfsoc_pl_ctrl_verilo_0/s1_axis] [get_bd_intf_pins usp_rf_data_converter_0/m01_axis]
   connect_bd_intf_net -intf_net usp_rf_data_converter_0_m02_axis [get_bd_intf_pins rfsoc_pl_ctrl_verilo_0/s2_axis] [get_bd_intf_pins usp_rf_data_converter_0/m02_axis]
   connect_bd_intf_net -intf_net usp_rf_data_converter_0_m03_axis [get_bd_intf_pins rfsoc_pl_ctrl_verilo_0/s3_axis] [get_bd_intf_pins usp_rf_data_converter_0/m03_axis]

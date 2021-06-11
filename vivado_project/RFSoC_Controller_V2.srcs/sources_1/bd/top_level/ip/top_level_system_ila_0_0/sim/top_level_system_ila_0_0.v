@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -108,10 +108,14 @@ module top_level_system_ila_0_0 (
   SLOT_12_AXIS_tlast,
   SLOT_12_AXIS_tvalid,
   SLOT_12_AXIS_tready,
+  SLOT_13_AXIS_tdata,
+  SLOT_13_AXIS_tlast,
+  SLOT_13_AXIS_tvalid,
+  SLOT_13_AXIS_tready,
   resetn
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, ASSOCIATED_BUSIF SLOT_0_AXIS:SLOT_10_AXIS:SLOT_11_AXIS:SLOT_12_AXIS:SLOT_1_AXIS:SLOT_2_AXIS:SLOT_3_AXIS:SLOT_4_AXIS:SLOT_5_AXIS:SLOT_6_AXIS:SLOT_7_AXIS:SLOT_8_AXIS:SLOT_9_AXIS, ASSOCIATED_RESET resetn, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, ASSOCIATED_BUSIF SLOT_0_AXIS:SLOT_10_AXIS:SLOT_11_AXIS:SLOT_12_AXIS:SLOT_13_AXIS:SLOT_1_AXIS:SLOT_2_AXIS:SLOT_3_AXIS:SLOT_4_AXIS:SLOT_5_AXIS:SLOT_6_AXIS:SLOT_7_AXIS:SLOT_8_AXIS:SLOT_9_AXIS, ASSOCIATED_RESET resetn, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.clk CLK" *)
 input wire clk;
 input wire [15 : 0] probe0;
@@ -232,6 +236,15 @@ input wire SLOT_12_AXIS_tvalid;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_12_AXIS, TDATA_NUM_BYTES 32, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 250000000, PHASE 0.000, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_12_AXIS TREADY" *)
 input wire SLOT_12_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TDATA" *)
+input wire [127 : 0] SLOT_13_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TLAST" *)
+input wire SLOT_13_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TVALID" *)
+input wire SLOT_13_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_13_AXIS, TDATA_NUM_BYTES 16, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 250000000, PHASE 0.000, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TREADY" *)
+input wire SLOT_13_AXIS_tready;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.resetn RST" *)
 input wire resetn;
@@ -291,6 +304,10 @@ input wire resetn;
     .SLOT_12_AXIS_tlast(SLOT_12_AXIS_tlast),
     .SLOT_12_AXIS_tvalid(SLOT_12_AXIS_tvalid),
     .SLOT_12_AXIS_tready(SLOT_12_AXIS_tready),
+    .SLOT_13_AXIS_tdata(SLOT_13_AXIS_tdata),
+    .SLOT_13_AXIS_tlast(SLOT_13_AXIS_tlast),
+    .SLOT_13_AXIS_tvalid(SLOT_13_AXIS_tvalid),
+    .SLOT_13_AXIS_tready(SLOT_13_AXIS_tready),
     .resetn(resetn)
   );
 endmodule

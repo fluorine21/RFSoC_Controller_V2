@@ -434,7 +434,7 @@ u8 cmd_init()
 		}
 		else
 		{
-			status = rf_get_adc_clock_status(i);
+			status = rf_get_adc_clock_status(i-4);
 			xil_printf("ADC channels %i-%i: %s\r\n", ((i-4)*4)+1, ((i-4)*4)+4, status ? "NO" : "YES");
 		}
 	}

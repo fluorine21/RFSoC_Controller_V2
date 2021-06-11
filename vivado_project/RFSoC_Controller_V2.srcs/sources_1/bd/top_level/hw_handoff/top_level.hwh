@@ -1,227 +1,152 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 30 10:45:21 2020" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jun  9 15:00:49 2021" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynquplusRFSOC" BOARD="xilinx.com:zcu1275:part0:1.0" DEVICE="xczu29dr" NAME="top_level" PACKAGE="ffvf1760" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="I" NAME="vin10_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin10_n">
+    <PORT DIR="O" NAME="vout21_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout21_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin10_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout21_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin10_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin10_p">
+    <PORT DIR="O" NAME="vout21_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout21_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin10_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout21_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac1_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac1_clk_n">
+    <PORT DIR="O" NAME="vout11_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout11_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac1_clk_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout11_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac1_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac1_clk_p">
+    <PORT DIR="O" NAME="vout11_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout11_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac1_clk_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout11_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout30_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout30_n">
+    <PORT DIR="I" NAME="vin31_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin31_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout30_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin31_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout30_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout30_p">
+    <PORT DIR="I" NAME="vin31_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin31_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout30_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin31_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout10_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout10_n">
+    <PORT DIR="I" NAME="vin00_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin00_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout10_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin00_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout10_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout10_p">
+    <PORT DIR="I" NAME="vin00_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin00_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout10_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin00_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout23_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout23_n">
+    <PORT DIR="I" NAME="vin21_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin21_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout23_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin21_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout23_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout23_p">
+    <PORT DIR="I" NAME="vin21_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin21_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout23_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin21_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_n">
+    <PORT DIR="O" LEFT="7" NAME="app_leds_tri_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio2_io_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_n"/>
+        <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_p">
+    <PORT DIR="O" NAME="vout02_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout02_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout02_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin02_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin02_n">
+    <PORT DIR="O" NAME="vout02_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout02_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin02_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout02_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin02_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin02_p">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac2_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac2_clk_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin02_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac2_clk_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="sysref_in_diff_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_n">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac2_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac2_clk_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac2_clk_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="sysref_in_diff_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_p">
+    <PORT DIR="I" NAME="vin13_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin13_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin13_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout22_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout22_n">
+    <PORT DIR="I" NAME="vin13_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin13_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout22_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin13_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout22_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout22_p">
+    <PORT DIR="I" NAME="vin01_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin01_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout22_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin01_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin32_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin32_n">
+    <PORT DIR="I" NAME="vin01_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin01_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin32_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin01_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin32_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin32_p">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc1_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc1_clk_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin32_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc1_clk_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin03_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin03_n">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc1_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc1_clk_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin03_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc1_clk_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin03_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin03_p">
+    <PORT DIR="I" NAME="vin30_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin30_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin03_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin30_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin12_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin12_n">
+    <PORT DIR="I" NAME="vin30_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin30_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin12_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin30_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin12_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin12_p">
+    <PORT DIR="O" NAME="vout13_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin12_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout13_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac3_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac3_clk_n">
+    <PORT DIR="O" NAME="vout13_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac3_clk_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout13_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac3_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac3_clk_p">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc3_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc3_clk_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac3_clk_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc3_clk_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin20_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin20_n">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc3_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc3_clk_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin20_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc3_clk_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin20_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin20_p">
+    <PORT DIR="O" NAME="vout33_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout33_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin20_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout33_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout12_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout12_n">
+    <PORT DIR="O" NAME="vout33_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout33_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout12_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout12_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout12_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout12_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout20_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout20_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout20_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout20_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout20_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout20_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout01_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout01_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout01_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout01_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout01_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout01_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc2_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc2_clk_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc2_clk_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc2_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc2_clk_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc2_clk_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout32_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout32_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout32_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout32_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout32_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout32_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="vin22_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin22_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin22_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="vin22_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin22_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin22_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout03_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout03_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout03_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout03_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout03_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout03_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout00_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout00_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout00_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vout00_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout00_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout00_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout33_p"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="vin23_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin23_n">
@@ -274,149 +199,224 @@
         <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac0_clk_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout33_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout33_n">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc2_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc2_clk_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout33_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc2_clk_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout33_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout33_p">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc2_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc2_clk_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout33_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc2_clk_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc3_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc3_clk_n">
+    <PORT DIR="O" NAME="vout03_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout03_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc3_clk_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout03_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc3_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc3_clk_p">
+    <PORT DIR="O" NAME="vout03_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout03_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc3_clk_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout03_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin30_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin30_n">
+    <PORT DIR="O" NAME="vout00_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout00_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin30_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout00_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin30_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin30_p">
+    <PORT DIR="O" NAME="vout00_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout00_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin30_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout00_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc1_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc1_clk_n">
+    <PORT DIR="I" NAME="vin20_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin20_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc1_clk_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin20_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc1_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc1_clk_p">
+    <PORT DIR="I" NAME="vin20_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin20_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc1_clk_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin20_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout13_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_n">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac3_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac3_clk_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout13_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac3_clk_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout13_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout13_p">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac3_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac3_clk_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout13_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac3_clk_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout02_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout02_n">
+    <PORT DIR="O" NAME="vout32_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout32_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout02_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout32_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout02_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout02_p">
+    <PORT DIR="O" NAME="vout32_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout32_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout02_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout32_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin13_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin13_n">
+    <PORT DIR="O" NAME="vout20_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout20_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin13_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout20_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin13_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin13_p">
+    <PORT DIR="O" NAME="vout20_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout20_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin13_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout20_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="7" NAME="app_leds_tri_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio2_io_o">
+    <PORT DIR="I" NAME="vin32_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin32_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_o"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin32_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin01_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin01_n">
+    <PORT DIR="I" NAME="vin32_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin32_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin01_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin32_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin01_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin01_p">
+    <PORT DIR="O" NAME="vout01_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout01_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin01_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout01_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac2_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac2_clk_n">
+    <PORT DIR="O" NAME="vout01_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout01_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac2_clk_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout01_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac2_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac2_clk_p">
+    <PORT DIR="I" NAME="vin12_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin12_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac2_clk_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin12_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout11_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout11_n">
+    <PORT DIR="I" NAME="vin12_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin12_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout11_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin12_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout11_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout11_p">
+    <PORT DIR="I" NAME="sysref_in_diff_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout11_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin31_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin31_n">
+    <PORT DIR="I" NAME="sysref_in_diff_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin31_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="sysref_in_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin31_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin31_p">
+    <PORT DIR="O" NAME="vout12_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout12_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin31_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout12_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin00_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin00_n">
+    <PORT DIR="O" NAME="vout12_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout12_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin00_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout12_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin00_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin00_p">
+    <PORT DIR="I" NAME="vin22_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin22_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin00_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin22_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin21_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin21_n">
+    <PORT DIR="I" NAME="vin22_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin22_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin21_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin22_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="vin21_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin21_p">
+    <PORT DIR="I" NAME="vin03_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin03_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin21_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin03_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout21_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout21_n">
+    <PORT DIR="I" NAME="vin03_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin03_p">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout21_n"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin03_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="vout21_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout21_p">
+    <PORT DIR="I" NAME="vin10_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin10_n">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout21_p"/>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin10_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="vin10_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin10_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin10_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac1_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac1_clk_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac1_clk_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="dac1_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_dac1_clk_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="dac1_clk_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout30_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout30_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout30_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout30_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout30_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout30_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout23_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout23_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout23_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout23_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout23_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout23_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout10_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout10_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout10_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout10_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout10_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout10_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="vin02_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin02_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin02_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="vin02_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin02_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin02_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout22_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout22_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout22_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vout22_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vout22_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout22_p"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -3947,6 +3947,89 @@
             <CONNECTION INSTANCE="rst_ps8_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="15" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_S00_AXI_awid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_awid"/>
@@ -4134,176 +4217,6 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_0_s_axi_lite_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="39" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_awaddr"/>
@@ -4389,6 +4302,93 @@
         <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_s_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="ps8_0_axi_periph_M02_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -6131,7 +6131,7 @@
         <PARAMETER NAME="C_SLOT_15_APC_MAX_WLAST_TO_AWVALID_WAITS" VALUE="0"/>
         <PARAMETER NAME="C_SLOT_15_APC_MAX_WRITE_TO_BVALID_WAITS" VALUE="0"/>
         <PARAMETER NAME="C_SLOT_15_APC_MAX_CONTINUOUS_RTRANSFERS_WAITS" VALUE="0"/>
-        <PARAMETER NAME="C_BRAM_CNT" VALUE="52.5"/>
+        <PARAMETER NAME="C_BRAM_CNT" VALUE="10"/>
         <PARAMETER NAME="C_SLOT_0_AXI_AW_SEL_DATA" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_W_SEL_DATA" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_B_SEL_DATA" VALUE="1"/>
@@ -9490,7 +9490,7 @@
         <PARAMETER NAME="EN_BRAM_DRC" VALUE="TRUE"/>
         <PARAMETER NAME="ALL_PROBE_SAME_MU" VALUE="TRUE"/>
         <PARAMETER NAME="ALL_PROBE_SAME_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="13"/>
+        <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="14"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ARUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_RUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_AWUSER_WIDTH" VALUE="1"/>
@@ -9530,7 +9530,7 @@
         <PARAMETER NAME="C_SLOT_10_INTF_TYPE" VALUE="xilinx.com:interface:axis_rtl:1.0"/>
         <PARAMETER NAME="C_SLOT_11_INTF_TYPE" VALUE="xilinx.com:interface:axis_rtl:1.0"/>
         <PARAMETER NAME="C_SLOT_12_INTF_TYPE" VALUE="xilinx.com:interface:axis_rtl:1.0"/>
-        <PARAMETER NAME="C_SLOT_13_INTF_TYPE" VALUE="xilinx.com:interface:aximm_rtl:1.0"/>
+        <PARAMETER NAME="C_SLOT_13_INTF_TYPE" VALUE="xilinx.com:interface:axis_rtl:1.0"/>
         <PARAMETER NAME="C_SLOT_14_INTF_TYPE" VALUE="xilinx.com:interface:aximm_rtl:1.0"/>
         <PARAMETER NAME="C_SLOT_15_INTF_TYPE" VALUE="xilinx.com:interface:aximm_rtl:1.0"/>
         <PARAMETER NAME="C_MON_TYPE" VALUE="MIX"/>
@@ -9767,11 +9767,6 @@
         <PORT DIR="I" NAME="SLOT_8_AXIS_tlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_8_AXIS_tvalid" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_8_AXIS_tready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="rst_ps8_0_100M1_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps8_0_100M1" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="255" NAME="SLOT_9_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_9_AXIS_tlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_9_AXIS_tvalid" SIGIS="undef"/>
@@ -9788,6 +9783,15 @@
         <PORT DIR="I" NAME="SLOT_12_AXIS_tlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_12_AXIS_tvalid" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_12_AXIS_tready" SIGIS="undef"/>
+        <PORT DIR="I" NAME="resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="rst_ps8_0_100M1_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps8_0_100M1" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="127" NAME="SLOT_13_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_13_AXIS_tlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_13_AXIS_tvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SLOT_13_AXIS_tready" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="axis_data_ps_to_pl_fifo_M_AXIS" NAME="SLOT_0_AXIS" TYPE="MONITOR" VLNV="xilinx.com:interface:axis:1.0">
@@ -10061,6 +10065,27 @@
             <PORTMAP LOGICAL="TLAST" PHYSICAL="SLOT_12_AXIS_tlast"/>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="SLOT_12_AXIS_tvalid"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="SLOT_12_AXIS_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="usp_rf_data_converter_0_m00_axis" NAME="SLOT_13_AXIS" TYPE="MONITOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="16"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="top_level_usp_rf_data_converter_0_0_clk_dac0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="SLOT_13_AXIS_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="SLOT_13_AXIS_tlast"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="SLOT_13_AXIS_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="SLOT_13_AXIS_tready"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -13923,12 +13948,12 @@
         <PORT DIR="I" NAME="SLOT_1_AXIS_tlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_1_AXIS_tvalid" SIGIS="undef"/>
         <PORT DIR="I" NAME="SLOT_1_AXIS_tready" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="7" NAME="SLOT_2_GPIO_tri_o" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" NAME="resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="rst_ps8_0_100M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rst_ps8_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="SLOT_2_GPIO_tri_o" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="axi_dma_0_M_AXIS_MM2S" NAME="SLOT_0_AXIS" TYPE="MONITOR" VLNV="xilinx.com:interface:axis:1.0">

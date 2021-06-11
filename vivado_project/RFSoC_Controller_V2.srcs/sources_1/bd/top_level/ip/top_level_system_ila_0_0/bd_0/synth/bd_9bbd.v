@@ -24,6 +24,10 @@ module bd_9bbd
     SLOT_12_AXIS_tlast,
     SLOT_12_AXIS_tready,
     SLOT_12_AXIS_tvalid,
+    SLOT_13_AXIS_tdata,
+    SLOT_13_AXIS_tlast,
+    SLOT_13_AXIS_tready,
+    SLOT_13_AXIS_tvalid,
     SLOT_1_AXIS_tdata,
     SLOT_1_AXIS_tlast,
     SLOT_1_AXIS_tready,
@@ -79,6 +83,10 @@ module bd_9bbd
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_12_AXIS TLAST" *) input SLOT_12_AXIS_tlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_12_AXIS TREADY" *) input SLOT_12_AXIS_tready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_12_AXIS TVALID" *) input SLOT_12_AXIS_tvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TDATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_13_AXIS, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, FREQ_HZ 250000000, HAS_TKEEP 0, HAS_TLAST 0, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 16, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0" *) input [127:0]SLOT_13_AXIS_tdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TLAST" *) input SLOT_13_AXIS_tlast;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TREADY" *) input SLOT_13_AXIS_tready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_13_AXIS TVALID" *) input SLOT_13_AXIS_tvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_1_AXIS TDATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_1_AXIS, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, FREQ_HZ 250000000, HAS_TKEEP 0, HAS_TLAST 0, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 32, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0" *) input [255:0]SLOT_1_AXIS_tdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_1_AXIS TLAST" *) input SLOT_1_AXIS_tlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_1_AXIS TREADY" *) input SLOT_1_AXIS_tready;
@@ -115,7 +123,7 @@ module bd_9bbd
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_9_AXIS TLAST" *) input SLOT_9_AXIS_tlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_9_AXIS TREADY" *) input SLOT_9_AXIS_tready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_9_AXIS TVALID" *) input SLOT_9_AXIS_tvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF SLOT_0_AXIS:SLOT_10_AXIS:SLOT_11_AXIS:SLOT_12_AXIS:SLOT_1_AXIS:SLOT_2_AXIS:SLOT_3_AXIS:SLOT_4_AXIS:SLOT_5_AXIS:SLOT_6_AXIS:SLOT_7_AXIS:SLOT_8_AXIS:SLOT_9_AXIS, ASSOCIATED_RESET resetn, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF SLOT_0_AXIS:SLOT_10_AXIS:SLOT_11_AXIS:SLOT_12_AXIS:SLOT_13_AXIS:SLOT_1_AXIS:SLOT_2_AXIS:SLOT_3_AXIS:SLOT_4_AXIS:SLOT_5_AXIS:SLOT_6_AXIS:SLOT_7_AXIS:SLOT_8_AXIS:SLOT_9_AXIS, ASSOCIATED_RESET resetn, CLK_DOMAIN top_level_usp_rf_data_converter_0_0_clk_dac0, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000" *) input clk;
   input [15:0]probe0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input resetn;
 
@@ -131,6 +139,10 @@ module bd_9bbd
   wire Conn12_TLAST;
   wire Conn12_TREADY;
   wire Conn12_TVALID;
+  wire [127:0]Conn13_TDATA;
+  wire Conn13_TLAST;
+  wire Conn13_TREADY;
+  wire Conn13_TVALID;
   wire [255:0]Conn1_TDATA;
   wire Conn1_TLAST;
   wire Conn1_TREADY;
@@ -188,6 +200,10 @@ module bd_9bbd
   wire net_slot_12_axis_tlast;
   wire net_slot_12_axis_tready;
   wire net_slot_12_axis_tvalid;
+  wire [127:0]net_slot_13_axis_tdata;
+  wire net_slot_13_axis_tlast;
+  wire net_slot_13_axis_tready;
+  wire net_slot_13_axis_tvalid;
   wire [255:0]net_slot_1_axis_tdata;
   wire net_slot_1_axis_tlast;
   wire net_slot_1_axis_tready;
@@ -239,6 +255,10 @@ module bd_9bbd
   assign Conn12_TLAST = SLOT_12_AXIS_tlast;
   assign Conn12_TREADY = SLOT_12_AXIS_tready;
   assign Conn12_TVALID = SLOT_12_AXIS_tvalid;
+  assign Conn13_TDATA = SLOT_13_AXIS_tdata[127:0];
+  assign Conn13_TLAST = SLOT_13_AXIS_tlast;
+  assign Conn13_TREADY = SLOT_13_AXIS_tready;
+  assign Conn13_TVALID = SLOT_13_AXIS_tvalid;
   assign Conn1_TDATA = SLOT_1_AXIS_tdata[255:0];
   assign Conn1_TLAST = SLOT_1_AXIS_tlast;
   assign Conn1_TREADY = SLOT_1_AXIS_tready;
@@ -301,6 +321,10 @@ module bd_9bbd
         .m_slot_12_axis_tlast(net_slot_12_axis_tlast),
         .m_slot_12_axis_tready(net_slot_12_axis_tready),
         .m_slot_12_axis_tvalid(net_slot_12_axis_tvalid),
+        .m_slot_13_axis_tdata(net_slot_13_axis_tdata),
+        .m_slot_13_axis_tlast(net_slot_13_axis_tlast),
+        .m_slot_13_axis_tready(net_slot_13_axis_tready),
+        .m_slot_13_axis_tvalid(net_slot_13_axis_tvalid),
         .m_slot_1_axis_tdata(net_slot_1_axis_tdata),
         .m_slot_1_axis_tlast(net_slot_1_axis_tlast),
         .m_slot_1_axis_tready(net_slot_1_axis_tready),
@@ -353,6 +377,10 @@ module bd_9bbd
         .slot_12_axis_tlast(Conn12_TLAST),
         .slot_12_axis_tready(Conn12_TREADY),
         .slot_12_axis_tvalid(Conn12_TVALID),
+        .slot_13_axis_tdata(Conn13_TDATA),
+        .slot_13_axis_tlast(Conn13_TLAST),
+        .slot_13_axis_tready(Conn13_TREADY),
+        .slot_13_axis_tvalid(Conn13_TVALID),
         .slot_1_axis_tdata(Conn1_TDATA),
         .slot_1_axis_tlast(Conn1_TLAST),
         .slot_1_axis_tready(Conn1_TREADY),
@@ -440,6 +468,10 @@ module bd_9bbd
         .probe50(net_slot_12_axis_tvalid),
         .probe51(net_slot_12_axis_tready),
         .probe52(net_slot_12_axis_tlast),
+        .probe53(net_slot_13_axis_tdata),
+        .probe54(net_slot_13_axis_tvalid),
+        .probe55(net_slot_13_axis_tready),
+        .probe56(net_slot_13_axis_tlast),
         .probe6(net_slot_1_axis_tvalid),
         .probe7(net_slot_1_axis_tready),
         .probe8(net_slot_1_axis_tlast),

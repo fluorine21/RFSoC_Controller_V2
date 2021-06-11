@@ -1,8 +1,8 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-//Date        : Wed Dec 30 10:44:07 2020
-//Host        : JAMES-LENOVO running 64-bit major release  (build 9200)
+//Date        : Wed Jun  9 14:59:45 2021
+//Host        : JAMES-FLOOR4 running 64-bit major release  (build 9200)
 //Command     : generate_target top_level.bd
 //Design      : top_level
 //Purpose     : IP block netlist
@@ -1192,9 +1192,9 @@ module top_level
   wire sysref_in_1_diff_n;
   wire sysref_in_1_diff_p;
   wire usp_rf_data_converter_0_clk_dac0;
-  wire [127:0]usp_rf_data_converter_0_m00_axis_TDATA;
-  wire usp_rf_data_converter_0_m00_axis_TREADY;
-  wire usp_rf_data_converter_0_m00_axis_TVALID;
+  (* CONN_BUS_INFO = "usp_rf_data_converter_0_m00_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [127:0]usp_rf_data_converter_0_m00_axis_TDATA;
+  (* CONN_BUS_INFO = "usp_rf_data_converter_0_m00_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire usp_rf_data_converter_0_m00_axis_TREADY;
+  (* CONN_BUS_INFO = "usp_rf_data_converter_0_m00_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire usp_rf_data_converter_0_m00_axis_TVALID;
   wire [127:0]usp_rf_data_converter_0_m01_axis_TDATA;
   wire usp_rf_data_converter_0_m01_axis_TREADY;
   wire usp_rf_data_converter_0_m01_axis_TVALID;
@@ -1872,6 +1872,10 @@ module top_level
         .SLOT_12_AXIS_tlast(1'b0),
         .SLOT_12_AXIS_tready(rfsoc_pl_ctrl_verilo_0_m8_axis_TREADY),
         .SLOT_12_AXIS_tvalid(rfsoc_pl_ctrl_verilo_0_m8_axis_TVALID),
+        .SLOT_13_AXIS_tdata(usp_rf_data_converter_0_m00_axis_TDATA),
+        .SLOT_13_AXIS_tlast(1'b0),
+        .SLOT_13_AXIS_tready(usp_rf_data_converter_0_m00_axis_TREADY),
+        .SLOT_13_AXIS_tvalid(usp_rf_data_converter_0_m00_axis_TVALID),
         .SLOT_1_AXIS_tdata(rfsoc_pl_ctrl_verilo_0_m0_axis_TDATA),
         .SLOT_1_AXIS_tlast(1'b0),
         .SLOT_1_AXIS_tready(rfsoc_pl_ctrl_verilo_0_m0_axis_TREADY),

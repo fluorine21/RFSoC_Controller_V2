@@ -17,7 +17,7 @@ UART_TIMEOUT = 3 #in seconds
 BAUDRATE = 115200
 
 GARBAGE_WORD = [0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0,0x7FFF,0]#Used for flushing DMA
-
+ADC_SCALE = (1800/32768) #to translate ADC output to voltage
 
 #Constants for channel class
 NANOSECONDS_PER_DAC_WORD = 4
@@ -698,8 +698,8 @@ class rfsoc_board:
                 sample_1 = word & 0xFFFF
                 
                 #Change this order if the samples are in the wrong order
-                adc_word_samples.append(sample_0)
                 adc_word_samples.append(sample_1)
+                adc_word_samples.append(sample_0)
            
             #TODO
             #Will probably need to change the order in which the samples are added
@@ -710,6 +710,16 @@ class rfsoc_board:
         self.board_driver.set_adc_shift(adc_obj.shift_val)
         
         self.board_driver.close_board()
+        
+        
+        #convert from 2's complement to what python can understand
+        for i in range(0, len(sample_list)):
+			#If this is a negative number
+            if(sample_list[i]&0x8000):#convert to python negative number
+                sample_list[i] = int((-(sample_list[i] & 0x8000) | (sample_list[i] & 0x7FFF)) * ADC_SCALE)
+            else:
+                sample_list[i] = int(sample_list[i] * ADC_SCALE)
+        
         return sample_list
         
    
@@ -978,13 +988,13 @@ class rfsoc_channel:
         if(isinstance(self.waveform_filename, list)):
             warn = 0
             for wf in self.waveform_filename:
-                if(int(wf) != wf && warn == 0):
+                if(int(wf) != wf and warn == 0):
                     warn = 1#Only warn once
                     print("Waring, had to rescale value: " + str(wf) + " to " + str(int(wf)))
                 waveform_wordstream.append(int(wf))
             
         
-        else
+        else:
             #First we're going to scale the waveform timing so it is a user-defined length
             waveform_wordstream = self.read_waveform_file(self.waveform_filename)
             waveform_wordstream = self.interpolate_sample_list(waveform_wordstream, waveform_len_in_samples)
